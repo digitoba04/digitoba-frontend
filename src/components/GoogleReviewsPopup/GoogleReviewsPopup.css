@@ -342,4 +342,8 @@
   .popup-content {
     padding: 8px;
   }
+
+  .header-content {
+    margin-left: -25px;
+  }
 }
