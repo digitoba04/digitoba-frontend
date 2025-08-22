@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import "./ContactPage.css";
 
 const ContactPage = () => {
@@ -14,7 +15,6 @@ const ContactPage = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
 
   // Available time slots
   const timeSlots = [
@@ -51,12 +51,6 @@ const ContactPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Animation on component mount
-  useEffect(() => {
-    setIsVisible(true);
-    window.scrollTo(0, 0);
-  }, []);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -90,13 +84,15 @@ const ContactPage = () => {
     for (let i = 1; i <= daysInMonth; i++) {
       const isSelected = i === selectedDate.getDate();
       days.push(
-        <div
+        <motion.div
           key={i}
           className={`calendar-day ${isSelected ? "selected" : ""}`}
           onClick={() => setSelectedDate(new Date(year, month, i))}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           {i}
-        </div>
+        </motion.div>
       );
     }
 
@@ -125,39 +121,79 @@ const ContactPage = () => {
     } ${date.getDate()}, ${date.getFullYear()}`;
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <div className={`contact-page ${isVisible ? "visible" : ""}`}>
-      {/* Animated background elements */}
-      <div className="animated-bg">
-        <div className="bg-circle circle-1"></div>
-        <div className="bg-circle circle-2"></div>
-        <div className="bg-circle circle-3"></div>
-        <div className="bg-circle circle-4"></div>
+    <div className="contact-page">
+      {/* Animated Background Elements */}
+      <div className="tech-background">
+        <div className="tech-grid"></div>
+        <div className="tech-orb orb-1"></div>
+        <div className="tech-orb orb-2"></div>
+        <div className="tech-orb orb-3"></div>
+        <div className="tech-line line-1"></div>
+        <div className="tech-line line-2"></div>
+        <div className="tech-line line-3"></div>
       </div>
 
       {/* Header Section */}
-      <header className="contact-header">
+      <motion.header
+        className="contact-header"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="container">
-          <h1 className="main-title">Get in Touch</h1>
+          <h1 className="main-title">
+            Get in <span className="gradient-text">Touch</span>
+          </h1>
           <p className="subtitle">
-            If you need help with your account or have questions about our
-            services, we're here to help!
+            Ready to transform your digital presence? Let's discuss your
+            project.
           </p>
           <div className="canada-time">
+            <span className="time-icon">⏰</span>
             <span className="time-label">Canada Time:</span>
             <span className="current-time">{currentTime}</span>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       <div className="container main-container">
-        <div className="contact-grid">
+        <motion.div
+          className="contact-grid"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {/* Left Column - Calendar & Booking */}
-          <div className="calendar-section">
+          <motion.div className="calendar-section" variants={itemVariants}>
             <div className="calendar-card">
               <h3>Schedule a Meeting</h3>
               <div className="calendar-header">
-                <button
+                <motion.button
                   className="nav-button"
                   onClick={() =>
                     setSelectedDate(
@@ -168,14 +204,16 @@ const ContactPage = () => {
                       )
                     )
                   }
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   &lt;
-                </button>
+                </motion.button>
                 <h4>
                   {monthNames[selectedDate.getMonth()]}{" "}
                   {selectedDate.getFullYear()}
                 </h4>
-                <button
+                <motion.button
                   className="nav-button"
                   onClick={() =>
                     setSelectedDate(
@@ -186,9 +224,11 @@ const ContactPage = () => {
                       )
                     )
                   }
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   &gt;
-                </button>
+                </motion.button>
               </div>
 
               <div className="calendar-weekdays">
@@ -207,42 +247,69 @@ const ContactPage = () => {
                 <h4>Available Time Slots</h4>
                 <div className="time-buttons">
                   {timeSlots.map((time) => (
-                    <button
+                    <motion.button
                       key={time}
                       className={`time-btn ${
                         selectedTime === time ? "selected" : ""
                       }`}
                       onClick={() => setSelectedTime(time)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
                       {time}
-                    </button>
+                    </motion.button>
                   ))}
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Middle Column - Contact Form */}
-          <div className="form-section">
+          <motion.div className="form-section" variants={itemVariants}>
             <div className="form-card">
-              <h2>Personal Information</h2>
-              <p>Fill up the required information</p>
+              <h2>Project Inquiry</h2>
+              <p>Tell us about your project requirements</p>
 
               {isSubmitted ? (
-                <div className="success-message">
-                  <div className="success-icon">✓</div>
+                <motion.div
+                  className="success-message"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="success-icon">
+                    <motion.svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      <path
+                        d="M20 6L9 17L4 12"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </motion.svg>
+                  </div>
                   <h3>Thank You!</h3>
                   <p>
                     Your message has been sent successfully. We'll get back to
                     you within 24 hours.
                   </p>
-                  <button
+                  <motion.button
                     className="back-to-form-btn"
                     onClick={() => setIsSubmitted(false)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     Send Another Message
-                  </button>
-                </div>
+                  </motion.button>
+                </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="contact-form">
                   <div className="form-group">
@@ -294,12 +361,12 @@ const ContactPage = () => {
                   </div>
 
                   <div className="form-group">
-                    <label>Description *</label>
+                    <label>Project Description *</label>
                     <textarea
                       name="description"
                       value={formData.description}
                       onChange={handleChange}
-                      placeholder="Type Your Message Here..."
+                      placeholder="Tell us about your project requirements, goals, and timeline..."
                       rows="4"
                       required
                     />
@@ -307,26 +374,25 @@ const ContactPage = () => {
 
                   {/* Booking Overview inside the form */}
                   {selectedDate && selectedTime && (
-                    <div className="booking-overview-form">
+                    <motion.div
+                      className="booking-overview-form"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <h3>Booking Overview</h3>
                       <div className="booking-details-form">
                         <div className="booking-detail-item">
                           <span className="detail-label">Location:</span>
-                          <span className="detail-value">Canada</span>
+                          <span className="detail-value">Online Meeting</span>
                         </div>
                         <div className="booking-detail-item">
                           <span className="detail-label">Service:</span>
-                          <span className="detail-value">Google Ads</span>
+                          <span className="detail-value">Consultation</span>
                         </div>
                         <div className="booking-detail-item">
-                          <span className="detail-label">Worker:</span>
-                          <span className="detail-value">
-                            Project Management
-                          </span>
-                        </div>
-                        <div className="booking-detail-item">
-                          <span className="detail-label">Price:</span>
-                          <span className="detail-value">0.00$</span>
+                          <span className="detail-label">Duration:</span>
+                          <span className="detail-value">30 minutes</span>
                         </div>
                         <div className="booking-detail-item">
                           <span className="detail-label">Date & Time:</span>
@@ -335,19 +401,24 @@ const ContactPage = () => {
                           </span>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   )}
 
-                  <button type="submit" className="submit-btn">
+                  <motion.button
+                    type="submit"
+                    className="submit-btn"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
                     Send Message
-                  </button>
+                  </motion.button>
                 </form>
               )}
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column - Contact Info & Map */}
-          <div className="info-section">
+          <motion.div className="info-section" variants={itemVariants}>
             <div className="info-card">
               <h3>Contact Information</h3>
 
@@ -414,8 +485,9 @@ const ContactPage = () => {
             <div className="testimonial-card">
               <div className="testimonial-content">
                 <p>
-                  "I had some issues but all from management reached to me and
-                  promptly resolved the issue."
+                  "Digitoba transformed our online presence completely. Their
+                  team delivered beyond our expectations with innovative
+                  solutions."
                 </p>
                 <div className="testimonial-author">
                   <span className="author-name">Sophia Martinez</span>
@@ -423,8 +495,8 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

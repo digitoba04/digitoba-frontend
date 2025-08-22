@@ -113,7 +113,7 @@ const Header = () => {
                   {services.map((service, index) => (
                     <motion.a
                       key={index}
-                      href="#"
+                      href="/services"
                       className="service-link"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}

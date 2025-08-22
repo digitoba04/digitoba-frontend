@@ -18,31 +18,31 @@ const Footer = () => {
             <h4>Services</h4>
             <ul>
               <li>
-                <a href="/servicesPage">Website Design & Domain</a>
+                <a href="/services">Website Design & Domain</a>
               </li>
               <li>
-                <a href="/servicesPage">AI Automations</a>
+                <a href="/services">AI Automations</a>
               </li>
               <li>
-                <a href="/servicesPage">AI Agents</a>
+                <a href="/services">AI Agents</a>
               </li>
               <li>
-                <a href="/servicesPage">SEO Optimization</a>
+                <a href="/services">SEO Optimization</a>
               </li>
               <li>
-                <a href="/servicesPage">Social Media Management</a>
+                <a href="/services">Social Media Management</a>
               </li>
               <li>
-                <a href="/servicesPage">Content Marketing</a>
+                <a href="/services">Content Marketing</a>
               </li>
               <li>
-                <a href="/servicesPage">Mobile App Development</a>
+                <a href="/services">Mobile App Development</a>
               </li>
               <li>
-                <a href="/servicesPage">Email Marketing</a>
+                <a href="/services">Email Marketing</a>
               </li>
               <li>
-                <a href="/servicesPage">UI/UX Design</a>
+                <a href="/services">UI/UX Design</a>
               </li>
             </ul>
           </div>
@@ -52,31 +52,31 @@ const Footer = () => {
             <h4>More Services</h4>
             <ul>
               <li>
-                <a href="/servicesPage">Lead Generation</a>
+                <a href="/services">Lead Generation</a>
               </li>
               <li>
-                <a href="/servicesPage">Bussiness Automations</a>
+                <a href="/services">Bussiness Automations</a>
               </li>
               <li>
-                <a href="/servicesPage">WordPress Websites</a>
+                <a href="/services">WordPress Websites</a>
               </li>
               <li>
-                <a href="/servicesPage">eCommerce Development</a>
+                <a href="/services">eCommerce Development</a>
               </li>
               <li>
-                <a href="/servicesPage">Custom Software</a>
+                <a href="/services">Custom Software</a>
               </li>
               <li>
-                <a href="/servicesPage">Cloud Solutions</a>
+                <a href="/services">Cloud Solutions</a>
               </li>
               <li>
-                <a href="/servicesPage">Cybersecurity</a>
+                <a href="/services">Cybersecurity</a>
               </li>
               <li>
-                <a href="/servicesPage">Data Analytics</a>
+                <a href="/services">Data Analytics</a>
               </li>
               <li>
-                <a href="/servicesPage">Software Maintenance</a>
+                <a href="/services">Software Maintenance</a>
               </li>
             </ul>
           </div>
