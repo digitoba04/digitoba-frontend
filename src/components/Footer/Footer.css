@@ -1,0 +1,255 @@
+.footer {
+  position: relative;
+  background: #0b0b0b; /* fallback solid */
+  color: #d1d1d1;
+  padding: 80px 0 30px;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden; /* so glow doesn’t spill */
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--primary, #ff6b00),
+    #0b0b0b 70%
+  );
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.footer .container,
+.footer .footer-grid,
+.footer .footer-bottom {
+  position: relative;
+  z-index: 1; /* keeps text/icons above background */
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+/* Headings - No underline, gradient style */
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ffffff, #6f0396);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 18px;
+}
+
+/* List Styling */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #bbb;
+  font-size: 0.95rem;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-links a:before {
+  content: "›";
+  position: absolute;
+  left: -15px;
+  color: var(--primary, #ff6b00);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover:before {
+  opacity: 1;
+  left: -10px;
+}
+
+/* Contact Section */
+.footer-contact p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+.footer-contact a {
+  color: #ddd;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-contact a:hover {
+  color: var(--primary, #ff6b00);
+}
+
+/* Social Icons */
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  font-size: 0.9rem;
+}
+
+.social-links a:hover {
+  background: var(--primary, #ff6b00);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
+  color: white;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 25px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.footer-bottom .tagline {
+  margin-top: 6px;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #ffffff, #6f0396);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+/* ------------------- Animations ------------------- */
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gradient text animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ------------------- Footer Styles ------------------- */
+
+.footer {
+  background: #0b0b0b;
+  color: #d1d1d1;
+  padding: 80px 0 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Fade-in only, no structure change */
+.footer-grid > div {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.footer-grid > div:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.footer-grid > div:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.footer-grid > div:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.footer-grid > div:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+/* Stylish link hover */
+.footer-links a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary, #ff6b00);
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary, #ff6b00);
+}
+
+.footer-links a:hover:after {
+  width: 100%;
+}
+
+/* Social icons hover effect */
+.social-links a {
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px) scale(1.1);
+  background: var(--primary, #ff6b00);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
+}
+
+/* Gradient animated tagline */
+.footer-bottom .tagline {
+  margin-top: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(270deg, 90deg, #ffffff, #6f0396);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s linear infinite;
+}

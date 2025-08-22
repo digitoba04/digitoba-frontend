@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/request-demo", "destination": "/" },
+    { "source": "/contact-us", "destination": "/" },
+    { "source": "/careers", "destination": "/" },
+    { "source": "/about-us", "destination": "/" },
+    { "source": "/services", "destination": "/" },
+    { "source": "/portfolio", "destination": "/" }
+  ]
+}

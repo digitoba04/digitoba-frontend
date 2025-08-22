@@ -1,0 +1,160 @@
+{
+  "services": [
+    {
+      "id": "web-design",
+      "icon": "FaLaptopCode",
+      "title": "Website Design & Domain",
+      "desc": "Professional website design with custom domain registration. We craft responsive, SEO-friendly, and conversion-focused websites tailored for your business.",
+      "detailedDesc": "Our web design service is a full-cycle solution covering everything from concept to deployment. We design clean, modern websites that are visually engaging, mobile-responsive, and optimized for performance. Whether you need a business site, e-commerce store, or portfolio, we ensure your website not only looks great but also drives measurable results. Along with design and development, we also assist in choosing and registering the perfect domain to establish a strong digital identity.",
+      "features": [
+        "Custom website design & branding",
+        "Domain registration & DNS setup",
+        "Responsive design (desktop, tablet, mobile)",
+        "CMS integration (WordPress, Headless CMS)",
+        "E-commerce functionality with secure checkout",
+        "SEO-friendly site structure & metadata",
+        "High-performance & fast-loading pages",
+        "SSL security & HTTPS setup",
+        "Ongoing support & maintenance options"
+      ],
+      "process": [
+        "Discovery & Requirement Gathering",
+        "Wireframing & UI/UX Design",
+        "Frontend & Backend Development",
+        "SEO Optimization & Speed Testing",
+        "Quality Assurance & Debugging",
+        "Launch & Deployment",
+        "Post-launch Support & Maintenance"
+      ],
+      "benefits": [
+        "Strong online brand presence",
+        "Mobile-first & user-friendly experience",
+        "Optimized for conversions & lead generation",
+        "Improved search engine visibility",
+        "Scalable website for future growth",
+        "Trust & credibility with secure domain + SSL"
+      ]
+    },
+    {
+      "id": "app-development",
+      "icon": "fas fa-mobile-alt",
+      "title": "App Development",
+      "desc": "Native and cross-platform mobile applications that provide seamless user experiences across all devices.",
+      "detailedDesc": "We craft high-performance, user-centric mobile applications for both iOS and Android platforms. Using modern frameworks like Flutter and React Native, we build scalable, feature-rich apps with intuitive interfaces that engage users and drive business growth.",
+      "features": [
+        "Native iOS & Android Development",
+        "Cross-Platform Development",
+        "UI/UX Design",
+        "API Integration",
+        "App Store Deployment",
+        "Performance Optimization",
+        "Quality Assurance & Testing",
+        "Maintenance & Updates"
+      ],
+      "process": [
+        "Discovery & Strategy",
+        "UI/UX Design",
+        "Development",
+        "Testing",
+        "Deployment",
+        "Maintenance"
+      ],
+      "benefits": [
+        "Enhanced User Engagement",
+        "Broader Market Reach",
+        "Increased Brand Loyalty",
+        "Higher Conversion Rates"
+      ]
+    },
+    {
+      "id": "ai-agents",
+      "icon": "fas fa-headset",
+      "title": "AI Agents",
+      "desc": "Intelligent AI agents that can handle customer service, sales, and support tasks 24/7.",
+      "detailedDesc": "Our AI agents are sophisticated chatbots and virtual assistants that can handle customer inquiries, provide support, and even drive sales. These agents use natural language processing to understand customer needs and provide appropriate responses, available 24/7 to serve your customers.",
+      "features": [
+        "Customer support bots",
+        "Sales assistants",
+        "Natural language processing",
+        "Multi-channel deployment",
+        "Sentiment analysis",
+        "Continuous learning",
+        "Integration with CRM",
+        "Performance analytics"
+      ],
+      "process": [
+        "Requirement Gathering",
+        "Agent Design",
+        "Training",
+        "Testing",
+        "Deployment"
+      ],
+      "benefits": [
+        "24/7 customer service",
+        "Reduced response times",
+        "Increased customer satisfaction",
+        "Cost-effective support"
+      ]
+    },
+    {
+      "id": "seo",
+      "icon": "fas fa-search",
+      "title": "SEO Optimization",
+      "desc": "Improve your website's visibility in search engines with our comprehensive SEO strategies.",
+      "detailedDesc": "Our SEO services help your website rank higher in search engine results, driving more organic traffic and potential customers to your business. We use white-hat SEO techniques that follow search engine guidelines.",
+      "features": [
+        "Keyword research",
+        "On-page optimization",
+        "Technical SEO",
+        "Content strategy",
+        "Backlink building",
+        "Local SEO",
+        "Performance tracking",
+        "Monthly reporting"
+      ],
+      "process": [
+        "Audit",
+        "Strategy",
+        "Implementation",
+        "Monitoring",
+        "Optimization"
+      ],
+      "benefits": [
+        "Higher search engine rankings",
+        "Increased organic traffic",
+        "Better user experience",
+        "Long-term results"
+      ]
+    },
+    {
+      "id": "social-media",
+      "icon": "fas fa-hashtag",
+      "title": "Social Media Management",
+      "desc": "Build your brand presence across social media platforms with our expert management services.",
+      "detailedDesc": "We manage your social media presence across all major platforms, creating engaging content that resonates with your audience and drives engagement.",
+      "features": [
+        "Content strategy",
+        "Post scheduling",
+        "Audience engagement",
+        "Performance analytics",
+        "Ad campaign management",
+        "Community building",
+        "Influencer partnerships",
+        "Crisis management"
+      ],
+      "process": [
+        "Strategy",
+        "Content Creation",
+        "Scheduling",
+        "Engagement",
+        "Analysis"
+      ],
+      "benefits": [
+        "Increased brand awareness",
+        "Higher engagement rates",
+        "Improved customer loyalty",
+        "Better audience insights"
+      ]
+    }
+  ]
+}

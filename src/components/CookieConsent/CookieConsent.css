@@ -1,0 +1,115 @@
+/* CookieConsent.css */
+.cookie-consent {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  z-index: 1001;
+  font-family: "Nunito", sans-serif;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.cookie-content {
+  padding: 20px;
+}
+
+.cookie-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cookie-icon {
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.cookie-header h3 {
+  margin: 0;
+  flex: 1;
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(138, 43, 226, 0.5);
+  transform: rotate(90deg);
+}
+
+.cookie-content p {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #cccccc;
+}
+
+.cookie-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.accept-all-btn {
+  background: linear-gradient(135deg, #8a2be2, #6a0dad);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(138, 43, 226, 0.3);
+}
+
+.accept-all-btn:hover {
+  background: linear-gradient(135deg, #6a0dad, #8a2be2);
+  box-shadow: 0 6px 15px rgba(138, 43, 226, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cookie-consent {
+    width: 95%;
+    bottom: 10px;
+  }
+
+  .cookie-content {
+    padding: 15px;
+  }
+
+  .cookie-buttons {
+    flex-direction: column;
+  }
+
+  .accept-all-btn {
+    width: 100%;
+  }
+}

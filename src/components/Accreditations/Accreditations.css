@@ -1,0 +1,345 @@
+/* Accreditations.css */
+.accreditations-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.accreditations-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(138, 43, 226, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(74, 0, 148, 0.1) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.accreditations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.accreditations-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.accreditations-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ffffff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.accreditations-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #8a2be2, #6a0dad);
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+.accreditations-header p {
+  font-size: 1.2rem;
+  color: #cccccc;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.accreditations-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.accreditations-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.accreditation-item {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 2px rgba(138, 43, 226, 0.3);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.accreditation-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(30%) brightness(0.9);
+  transition: all 0.3s ease;
+}
+
+.accreditation-item:hover .accreditation-logo {
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.1);
+}
+
+.accreditation-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.accreditation-item:hover .accreditation-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accreditation-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.click-hint {
+  font-size: 0.75rem;
+  color: #8a2be2;
+  font-weight: 500;
+}
+
+.accreditations-categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.category-badge {
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-badge::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.category-badge.canadian {
+  background: rgba(138, 43, 226, 0.15);
+  color: #8a2be2;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.category-badge.canadian::before {
+  background: #8a2be2;
+}
+
+.category-badge.international {
+  background: rgba(66, 133, 244, 0.15);
+  color: #4285f4;
+  border: 1px solid rgba(66, 133, 244, 0.3);
+}
+
+.category-badge.international::before {
+  background: #4285f4;
+}
+
+.category-badge.ecommerce {
+  background: rgba(121, 189, 79, 0.15);
+  color: #79bd4f;
+  border: 1px solid rgba(121, 189, 79, 0.3);
+}
+
+.category-badge.ecommerce::before {
+  background: #79bd4f;
+}
+
+.accreditations-footer {
+  text-align: center;
+  padding: 30px;
+  background: rgba(138, 43, 226, 0.1);
+  border-radius: 16px;
+  border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.accreditations-footer p {
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Responsive design for laptop (default) */
+@media (min-width: 1024px) {
+  .accreditations-row {
+    gap: 40px;
+  }
+
+  .accreditation-item {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .accreditations-row {
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .accreditation-item {
+    width: 160px;
+    height: 160px;
+  }
+
+  .accreditations-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .accreditations-header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .accreditations-section {
+    padding: 60px 16px;
+  }
+
+  .accreditations-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .accreditations-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .accreditations-header p {
+    font-size: 1rem;
+  }
+
+  .accreditations-grid {
+    gap: 30px;
+  }
+
+  .accreditations-row {
+    gap: 20px;
+  }
+
+  .accreditation-item {
+    width: 140px;
+    height: 140px;
+  }
+
+  .accreditation-name {
+    font-size: 0.8rem;
+  }
+
+  .accreditations-categories {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-badge {
+    width: fit-content;
+  }
+
+  .accreditations-footer {
+    padding: 20px;
+  }
+
+  .accreditations-footer p {
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile view */
+@media (max-width: 480px) {
+  .accreditations-row {
+    gap: 15px;
+  }
+
+  .accreditation-item {
+    width: 120px;
+    height: 120px;
+  }
+
+  .accreditation-name {
+    font-size: 0.7rem;
+  }
+
+  .click-hint {
+    font-size: 0.65rem;
+  }
+}

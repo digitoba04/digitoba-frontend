@@ -1,0 +1,9 @@
+/* Home.css */
+.home-page {
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling for anchor links */
+.home-page section {
+  scroll-margin-top: 80px; /* Adjust based on your header height */
+}

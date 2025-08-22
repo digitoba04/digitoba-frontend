@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure Tawk.to chat widget is always visible */
+iframe#tawk-iframe {
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 9999 !important;
+}
+
+/* Customize the chat appearance if needed */
+.tawk-button {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Make sure the chat doesn't get hidden by other elements */
+.tawk-min-container {
+  z-index: 10000 !important;
+}
