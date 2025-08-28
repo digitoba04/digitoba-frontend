@@ -457,7 +457,7 @@ const ContactPage = () => {
 
               <div className="office-location">
                 <h4>Canada Office</h4>
-                <p>30580 Garnet Pl, Abbotsford, BC V4T 1G6, Canada</p>
+                <p>1122 4 St SW 710, Calgary, AB T2R 1M1, Canada</p>
               </div>
 
               <div className="office-location">

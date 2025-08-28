@@ -123,7 +123,7 @@ const Footer = () => {
             <p>
               <strong>Canada Office:</strong>
               <br />
-              30580 Garnet Pl, Abbotsford, BC, Canada
+              1122 4 St SW 710, Calgary, AB T2R 1M1, Canada
             </p>
             <p>
               <strong>India Office:</strong>
